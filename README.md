@@ -53,17 +53,6 @@ This project is feasible for an individual developer because:
 
 # 4. ARCHITECTURE.md (C4 Model)
 
-You must include **C4 architecture diagrams**. These diagrams explain how the system is structured.
-
-The C4 model for software architecture has four levels:
-
-1. Context Diagram  
-2. Container Diagram  
-3. Component Diagram  
-4. Code Diagram  
-
-For this assignment, you usually need:
-
 - Context Diagram
 - Container Diagram
 - Component Diagram
@@ -131,23 +120,8 @@ DecisionSupportComponent --> ClinicalGuidelinesAPI
 
 ---
 
-# 8. End-to-End Components (Important for Marks)
-
-Your system should clearly show the complete system flow:
+# 8. End-to-End Components 
 
 **User → Interface → Backend → Services → Database → External Systems**
 
-### Example System Flow
-
-Doctor/Nurse  
-↓  
-Web Application  
-↓  
-Backend API  
-↓  
-Decision Support Service  
-↓  
-Patient Database  
-↓  
-Clinical Guidelines API
 
