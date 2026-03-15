@@ -50,3 +50,80 @@ This project is feasible for an individual developer because:
 - The system will be implemented as a prototype
 - Only core features will be developed
 - External integrations will be simulated
+
+# System Architecture
+
+## C4 Context Diagram
+
+```mermaid
+graph TD
+
+Doctor --> System
+Nurse --> System
+System --> Database
+System --> ClinicalGuidelinesAPI
+
+
+Explanation:
+
+- **Doctor / Nurse** → Users of the system  
+- **System** → Digital Decision Support System  
+- **Database** → Stores patient records  
+- **Clinical Guidelines API** → External medical data
+
+---
+
+# 6. Container Diagram
+
+```markdown
+## C4 Container Diagram
+
+```mermaid
+graph TD
+
+User --> WebApp
+WebApp --> BackendAPI
+BackendAPI --> Database
+BackendAPI --> DecisionSupportService
+
+
+Containers:
+
+- Web Application
+- Backend API
+- Decision Support Service
+- Database
+
+---
+
+# 7. Component Diagram
+
+```markdown
+## C4 Component Diagram
+
+```mermaid
+graph TD
+
+WebApp --> AuthComponent
+WebApp --> PatientRecordComponent
+
+PatientRecordComponent --> Database
+DecisionSupportComponent --> ClinicalGuidelinesAPI
+
+
+Components:
+
+- Authentication module
+- Patient record module
+- Decision support module
+
+---
+
+# 8. End-to-End Components (Important for Marks)
+
+Your system should clearly show:
+
+**User → Interface → Backend → Services → Database → External Systems**
+
+Example flow:
+
