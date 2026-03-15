@@ -51,9 +51,28 @@ This project is feasible for an individual developer because:
 - Only core features will be developed
 - External integrations will be simulated
 
-# System Architecture
+# 4. ARCHITECTURE.md (C4 Model)
 
-## C4 Context Diagram
+You must include **C4 architecture diagrams**. These diagrams explain how the system is structured.
+
+The C4 model for software architecture has four levels:
+
+1. Context Diagram  
+2. Container Diagram  
+3. Component Diagram  
+4. Code Diagram  
+
+For this assignment, you usually need:
+
+- Context Diagram
+- Container Diagram
+- Component Diagram
+
+---
+
+# 5. C4 Context Diagram
+
+## System Architecture
 
 ```mermaid
 graph TD
@@ -62,9 +81,9 @@ Doctor --> System
 Nurse --> System
 System --> Database
 System --> ClinicalGuidelinesAPI
+```
 
-
-Explanation:
+### Explanation
 
 - **Doctor / Nurse** → Users of the system  
 - **System** → Digital Decision Support System  
@@ -75,9 +94,6 @@ Explanation:
 
 # 6. Container Diagram
 
-```markdown
-## C4 Container Diagram
-
 ```mermaid
 graph TD
 
@@ -85,45 +101,53 @@ User --> WebApp
 WebApp --> BackendAPI
 BackendAPI --> Database
 BackendAPI --> DecisionSupportService
+```
 
+### Containers
 
-Containers:
-
-- Web Application
-- Backend API
-- Decision Support Service
-- Database
+- **Web Application** – Interface used by doctors and nurses  
+- **Backend API** – Handles system logic and requests  
+- **Decision Support Service** – Provides clinical recommendations  
+- **Database** – Stores patient and medical data  
 
 ---
 
 # 7. Component Diagram
-
-```markdown
-## C4 Component Diagram
 
 ```mermaid
 graph TD
 
 WebApp --> AuthComponent
 WebApp --> PatientRecordComponent
-
 PatientRecordComponent --> Database
 DecisionSupportComponent --> ClinicalGuidelinesAPI
+```
 
+### Components
 
-Components:
-
-- Authentication module
-- Patient record module
-- Decision support module
+- **Authentication Component** – Manages login and user security  
+- **Patient Record Component** – Handles patient information  
+- **Decision Support Component** – Processes clinical guidelines  
 
 ---
 
 # 8. End-to-End Components (Important for Marks)
 
-Your system should clearly show:
+Your system should clearly show the complete system flow:
 
 **User → Interface → Backend → Services → Database → External Systems**
 
-Example flow:
+### Example System Flow
+
+Doctor/Nurse  
+↓  
+Web Application  
+↓  
+Backend API  
+↓  
+Decision Support Service  
+↓  
+Patient Database  
+↓  
+Clinical Guidelines API
 
