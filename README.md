@@ -262,3 +262,172 @@ Another challenge was addressing the needs of hospital administrators who requir
 Scalability was also an important consideration because the system should be able to expand to multiple rural hospitals in the future. However, implementing scalable infrastructure can increase system complexity.
 
 To address these challenges, the system requirements were designed to balance usability, security, and performance while ensuring that the system remains practical for rural hospital environments with limited technical resources.
+
+
+# Use Case Diagram
+## Rural Hospital Digital Decision Support System
+
+```mermaid
+flowchart LR
+
+Doctor --> Login
+Nurse --> Login
+Administrator --> Login
+ITStaff --> Login
+Researcher --> Login
+Patient --> ViewRecords
+
+Doctor --> ViewPatientRecords
+Doctor --> GenerateTreatmentRecommendation
+Doctor --> UpdateDiagnosis
+
+Nurse --> RecordVitalSigns
+Nurse --> UpdatePatientRecords
+
+Administrator --> GenerateReports
+Administrator --> ManageUsers
+
+ITStaff --> MaintainSystem
+Researcher --> ExportAnonymizedData
+
+Login --> Authentication
+ViewPatientRecords --> Database
+RecordVitalSigns --> Database
+GenerateTreatmentRecommendation --> DecisionSupportSystem
+
+
+---
+
+## Explanation (required for marks)
+
+Add this under the diagram:
+
+```markdown id="h0bq1p"
+## Explanation of the Use Case Diagram
+
+The main actors in the system are Doctors, Nurses, Administrators, IT Staff, Patients, and Researchers. 
+Each actor interacts with the system based on their role in the hospital.
+
+Doctors use the system to view patient records, update diagnoses, and generate treatment recommendations. 
+Nurses record patient vital signs and update patient records. Administrators generate reports and manage 
+system users. IT staff maintain the system, while researchers export anonymized data for research purposes.
+
+The Login use case is shared by most actors, which shows reuse of functionality. The Generate Treatment 
+Recommendation use case supports doctors by helping them make clinical decisions, which addresses the 
+stakeholder concern of improving decision-making in rural hospitals.
+
+# Use Case Specifications
+
+## UC1: User Login
+Actor: Doctor, Nurse, Administrator, IT Staff, Researcher  
+Description: Allows authorized users to access the system securely.
+
+Preconditions:
+- User must be registered in the system.
+
+Postconditions:
+- User is successfully logged in.
+
+Basic Flow:
+1. User enters username and password.
+2. System verifies credentials.
+3. System grants access.
+
+Alternative Flow:
+- If credentials are incorrect, the system displays an error message.
+
+---
+
+## UC2: View Patient Records
+Actor: Doctor
+
+Preconditions:
+- Doctor must be logged in.
+
+Postconditions:
+- Patient records are displayed.
+
+Basic Flow:
+1. Doctor searches for patient.
+2. System retrieves patient information.
+3. System displays patient records.
+
+Alternative Flow:
+- If patient does not exist, the system displays "Patient not found".
+
+---
+
+## UC3: Record Vital Signs
+Actor: Nurse
+
+Preconditions:
+- Nurse must be logged in.
+
+Postconditions:
+- Patient vital signs are saved.
+
+Basic Flow:
+1. Nurse selects a patient.
+2. Nurse enters vital signs.
+3. System saves the data.
+
+Alternative Flow:
+- If required fields are missing, the system shows an error.
+
+---
+
+## UC4: Generate Treatment Recommendation
+Actor: Doctor
+
+Preconditions:
+- Patient record must exist.
+
+Postconditions:
+- System generates a treatment suggestion.
+
+Basic Flow:
+1. Doctor selects patient symptoms.
+2. System processes the information.
+3. System displays treatment recommendations.
+
+# Test Cases
+
+| Test Case ID | Requirement ID | Description | Steps | Expected Result | Actual Result | Status |
+|------------|---------------|------------|------|---------------|--------------|-------|
+| TC001 | FR1 | User login with valid credentials | Enter username and password | User logged in successfully |  |  |
+| TC002 | FR1 | User login with invalid password | Enter wrong password | Error message displayed |  |  |
+| TC003 | FR2 | View patient records | Search patient ID | Patient records displayed |  |  |
+| TC004 | FR3 | Record vital signs | Enter patient vitals | Data saved successfully |  |  |
+| TC005 | FR4 | Generate treatment recommendation | Select symptoms | System generates recommendation |  |  |
+| TC006 | FR5 | Generate reports | Click generate report | Report displayed |  |  |
+| TC007 | FR6 | Export anonymized data | Click export | File downloaded |  |  |
+| TC008 | FR7 | Manage users | Add new user | User added successfully |  |  |
+
+## Non-Functional Test Scenarios
+
+Performance Test:
+Simulate 1,000 users accessing the system at the same time.
+Expected Result: System response time must be less than 2 seconds.
+
+Security Test:
+Attempt login using incorrect credentials multiple times.
+Expected Result: System must block the user after 5 failed attempts.
+
+# Reflection: Challenges in Creating Use Cases and Test Cases
+
+One of the main challenges in this assignment was translating system requirements into use cases. 
+While functional requirements explain what the system should do, use cases explain how users interact 
+with the system step by step. This required careful thinking to ensure that every use case matched 
+the functional requirements developed in Assignment 4.
+
+Another challenge was identifying the most important use cases. The system includes many features, 
+but only the most critical ones needed to be documented in detail. Selecting the correct use cases 
+required reviewing stakeholder needs, especially doctors and nurses who are the main users of the system.
+
+Creating test cases was also challenging because each functional requirement had to be tested in a 
+realistic way. For example, testing the login system required both successful and unsuccessful login 
+scenarios. Performance and security testing also required thinking beyond normal system use.
+
+This assignment helped improve my understanding of how requirements, use cases, and testing are 
+connected in the software development process.
+
