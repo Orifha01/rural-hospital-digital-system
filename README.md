@@ -294,16 +294,9 @@ Login --> Authentication
 ViewPatientRecords --> Database
 RecordVitalSigns --> Database
 GenerateTreatmentRecommendation --> DecisionSupportSystem
-
-
----
+```
 
 ## Explanation (required for marks)
-
-Add this under the diagram:
-
-```markdown id="h0bq1p"
-## Explanation of the Use Case Diagram
 
 The main actors in the system are Doctors, Nurses, Administrators, IT Staff, Patients, and Researchers. 
 Each actor interacts with the system based on their role in the hospital.
