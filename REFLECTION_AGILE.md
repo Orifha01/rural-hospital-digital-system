@@ -30,7 +30,7 @@ connected in the software development process.
 
 
 
-## 4. Reflection
+## 4. Reflection: Challenges in creating Agile Planning
 
 One of the most challenging aspects of this assignment was translating structured system requirements into Agile user stories. 
 While the requirements from previous assignments were detailed and technical, Agile requires breaking them into smaller, 
