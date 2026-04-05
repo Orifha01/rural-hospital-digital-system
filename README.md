@@ -3,7 +3,7 @@ This project proposes a digital system designed to support clinical decision-mak
 The goal of the system is to improve patient care, reduce medical errors, and support healthcare 
 professionals in making informed clinical decisions.
 
-## Project Documentation
+
 
 
 
