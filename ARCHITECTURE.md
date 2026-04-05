@@ -1,4 +1,4 @@
-# 4. ARCHITECTURE.md (C4 Model)
+# 4. ARCHITECTURE.md
 
 - Context Diagram
 - Container Diagram
