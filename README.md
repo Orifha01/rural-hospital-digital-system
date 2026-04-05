@@ -397,21 +397,4 @@ Security Test:
 Attempt login using incorrect credentials multiple times.
 Expected Result: System must block the user after 5 failed attempts.
 
-# Reflection: Challenges in Creating Use Cases and Test Cases
-
-One of the main challenges in this assignment was translating system requirements into use cases. 
-While functional requirements explain what the system should do, use cases explain how users interact 
-with the system step by step. This required careful thinking to ensure that every use case matched 
-the functional requirements developed in Assignment 4.
-
-Another challenge was identifying the most important use cases. The system includes many features, 
-but only the most critical ones needed to be documented in detail. Selecting the correct use cases 
-required reviewing stakeholder needs, especially doctors and nurses who are the main users of the system.
-
-Creating test cases was also challenging because each functional requirement had to be tested in a 
-realistic way. For example, testing the login system required both successful and unsuccessful login 
-scenarios. Performance and security testing also required thinking beyond normal system use.
-
-This assignment helped improve my understanding of how requirements, use cases, and testing are 
-connected in the software development process.
 
