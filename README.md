@@ -73,6 +73,79 @@ Enables doctors and administrators to:
 - `reflection.md` – Lessons learned  
 
 ---
+📊 Assignment 8 — State & Activity Modeling
+
+This assignment focuses on modeling the dynamic behaviour of the Rural Hospital Digital System using UML diagrams. It builds on the system requirements (Assignment 4), use cases (Assignment 5), and Agile planning (Assignment 6) to show how the system behaves internally and across workflows.
+
+📂 Documents
+Document	Description
+STATE_DIAGRAMS.md
+	7 UML state transition diagrams showing object lifecycles (Appointment, Patient Record, Doctor Availability, Bed Allocation, Medication Schedule, Lab Test, Notification)
+ACTIVITY_DIAGRAMS.md
+	8 UML activity diagrams showing workflows (Registration, Booking, Admission, Consultation, Medication, Lab Tests, Discharge, Emergency Handling)
+a8_reflection.md
+	Reflection on challenges in modeling system behaviour, granularity, and alignment with Agile
+🔁 State Modeling (Object Behaviour)
+
+State diagrams define how key system objects change over time.
+
+Key Objects Modeled:
+Appointment — Request → Confirmed → Completed / Cancelled / NoShow
+Patient Record — Created → Active → Archived → Deleted
+Doctor Availability — Available → Busy → On Leave
+Bed Allocation — Free → Reserved → Occupied → Cleaning
+Medication Schedule — Scheduled → Due → Administered / Missed
+Lab Test — Requested → In Progress → Completed → Reviewed
+Notification — Queued → Sending → Delivered / Failed
+
+📌 These diagrams ensure:
+
+Accurate tracking of hospital operations
+Clear lifecycle management of critical resources
+Alignment with functional requirements (FR-03, FR-08, FR-10, etc.)
+🔄 Activity Modeling (Workflow Behaviour)
+
+Activity diagrams represent end-to-end system workflows involving multiple actors.
+
+Key Workflows Modeled:
+Patient Registration
+Appointment Booking
+Patient Admission
+Doctor Consultation
+Medication Administration
+Lab Test Processing
+Patient Discharge
+Emergency Handling
+
+📌 These workflows demonstrate:
+
+Step-by-step process flow
+Decision-making logic (e.g., availability checks)
+Parallel operations (e.g., notifications + updates)
+Actor responsibilities (Patient, Doctor, System, Admin)
+🔗 Traceability
+
+All diagrams are linked to previous assignments:
+
+Artifact	Source
+Functional Requirements	Assignment 4 (SRD.md)
+Use Cases	Assignment 5 (USE_CASE_SPECS.md)
+User Stories	Assignment 6 (AGILE_PLANNING.md)
+
+This ensures full traceability from:
+
+Requirement → Use Case → User Story → System Behaviour
+
+⚙️ Why This Matters
+
+Modeling system behaviour is critical because it:
+
+Prevents logical errors before implementation
+Identifies missing requirements (e.g., NoShow, Reserved states)
+Improves system reliability in a healthcare environment
+Prepares the system for development and testing
+
+In a rural hospital context, where resources are limited and efficiency is critical, these models help ensure that the system behaves predictably and supports real-world healthcare workflows.
 
 ## 📊 Kanban Board
 
