@@ -110,8 +110,4 @@ The process of developing the domain model and class diagram transformed my unde
 
 The final design reflects a balance between accuracy, simplicity, and alignment with stakeholder needs, making it a strong foundation for building the Rural Hospital Digital System.
 
----
 
-*Word count: ~700 words*
-
-*Document prepared by: [Your Full Name] | [Your Student Number] | CPUT | April 2026*
