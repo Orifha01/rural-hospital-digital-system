@@ -75,3 +75,22 @@ class Notification {
     +markRead()
 }
 
+%% Relationships
+
+Patient "1" --> "0..*" Appointment : books
+Doctor "1" --> "0..*" Appointment : attends
+
+Patient "1" *-- "0..*" MedicalRecord : owns
+Doctor "1" --> "0..*" MedicalRecord : writes
+
+Appointment "1" --> "0..1" MedicalRecord : generates
+
+Patient "1" --> "0..1" Bed : assigned
+Bed "1" --> "0..1" Patient : occupiedBy
+
+Patient "1" --> "0..*" MedicationSchedule : follows
+
+Patient "1" --> "0..*" Notification : receives
+Appointment "1" --> "0..*" Notification : triggers
+MedicationSchedule "1" --> "0..*" Notification : triggers
+
