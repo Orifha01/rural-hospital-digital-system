@@ -173,6 +173,4 @@ The domain model provides a clear and structured representation of the Rural Hos
 - Clear relationships between entities
 - A solid foundation for class diagram design and system implementation
 
----
 
-*Document prepared by: [Your Full Name] | [Your Student Number] | CPUT | April 2026*
