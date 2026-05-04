@@ -1,0 +1,10 @@
+##  Creational Design Patterns (Assignment 10)
+
+| Pattern | Use Case in Rural Hospital System | Reason |
+|--------|----------------------------------|--------|
+| Simple Factory | Appointment creation | Centralizes appointment logic |
+| Factory Method | Notification system | Supports different notification types |
+| Abstract Factory | UI components | Supports multiple platforms (mobile/desktop) |
+| Builder | Medical records | Handles complex object creation |
+| Prototype | Patient records | Allows cloning without reloading data |
+| Singleton | Database connection | Ensures single shared connection |
