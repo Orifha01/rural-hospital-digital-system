@@ -17,74 +17,40 @@ classDiagram
 %% Core User Entities
 %% ========================
 
-package model;
-
-public class Patient {
-    private String patientId;
-    private String name;
-    private String contactNumber;
-
-    public Patient(String patientId, String name, String contactNumber) {
-        this.patientId = patientId;
-        this.name = name;
-        this.contactNumber = contactNumber;
-    }
-
-    public void register() {
-        System.out.println("Patient registered: " + name);
-    }
-
-    public void updateProfile() {
-        System.out.println("Profile updated for: " + name);
-    }
+class Patient {
+    -patientId: String
+    -fullName: String
+    -dateOfBirth: Date
+    -contactNumber: String
+    -email: String
+    +register()
+    +updateProfile()
+    +requestAppointment()
+    +viewMedicalHistory()
 }
 
-package model;
-
-public class Doctor {
-    private String doctorId;
-    private String name;
-    private String specialization;
-
-    public Doctor(String doctorId, String name, String specialization) {
-        this.doctorId = doctorId;
-        this.name = name;
-        this.specialization = specialization;
-    }
-
-    public void consultPatient() {
-        System.out.println("Doctor " + name + " is consulting.");
-    }
+class Doctor {
+    -doctorId: String
+    -fullName: String
+    -specialization: String
+    -availabilityStatus: String
+    +viewSchedule()
+    +updateAvailability()
+    +consultPatient()
+    +writeMedicalRecord()
 }
-
 %% ========================
 %% Appointment System
 %% ========================
 
-package model;
-
-import java.time.LocalDateTime;
-
-public class Appointment {
-    private String appointmentId;
-    private LocalDateTime dateTime;
-    private String status;
-
-    public Appointment(String appointmentId, LocalDateTime dateTime) {
-        this.appointmentId = appointmentId;
-        this.dateTime = dateTime;
-        this.status = "Pending";
-    }
-
-    public void book() {
-        status = "Confirmed";
-        System.out.println("Appointment booked.");
-    }
-
-    public void cancel() {
-        status = "Cancelled";
-        System.out.println("Appointment cancelled.");
-    }
+class Appointment {
+    -appointmentId: String
+    -appointmentDateTime: DateTime
+    -status: String
+    +book()
+    +cancel()
+    +reschedule()
+    +markCompleted()
 }
 
 class TimeSlot {
