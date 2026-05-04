@@ -1,0 +1,22 @@
+## 💻 Class Implementation (Assignment 10)
+
+The system was implemented in **Java** due to its strong support for object-oriented programming and design patterns.
+
+### Design Decisions
+
+- Classes were directly derived from the UML Class Diagram (Assignment 9)
+- Relationships were implemented using object references (composition/association)
+- Lists were used to model one-to-many relationships (e.g., Patient → Appointments)
+- Encapsulation applied using private attributes with controlled access
+- Methods reflect real system actions (e.g., book appointment, assign bed)
+
+### Structure
+
+/src/model contains:
+- Patient
+- Doctor
+- Appointment
+- MedicalRecord
+- Bed
+- MedicationSchedule
+- Notification
