@@ -234,3 +234,195 @@ Student Number: 219333289
 Cape Peninsula University of Technology  
 Module: Software Engineering  
 Date: 2026
+
+---
+
+# Assignment 11 — Repository Layer and Persistence
+
+## Overview
+
+This assignment focused on implementing a persistence repository layer for the Rural Hospital Digital System. The repository layer abstracts storage logic from business logic, making the system scalable, maintainable, and easy to extend with future storage backends such as databases, file systems, or REST APIs.
+
+---
+
+# Repository Pattern Implementation
+
+The Repository Pattern was used to separate data access logic from the core application logic.
+
+A generic repository interface was created:
+
+```java
+Repository<T, ID>
+```
+
+This interface provides standard CRUD operations:
+
+- save()
+- findById()
+- findAll()
+- delete()
+
+Entity-specific repositories extend the generic repository:
+
+- PatientRepository
+- DoctorRepository
+- AppointmentRepository
+
+This design reduces duplication and improves code reusability.
+
+---
+
+# In-Memory Storage Implementation
+
+The system currently uses HashMap-based in-memory repositories for persistence.
+
+Example:
+
+```java
+private Map<String, Patient> storage = new HashMap<>();
+```
+
+Implemented repositories:
+
+- InMemoryPatientRepository
+- InMemoryDoctorRepository
+- InMemoryAppointmentRepository
+
+These repositories support full CRUD functionality while remaining lightweight and easy to test.
+
+---
+
+# Factory Pattern Implementation
+
+The Factory Pattern was used to decouple the application from storage implementation details.
+
+A central factory class:
+
+```java
+RepositoryFactory
+```
+
+returns repository implementations based on the selected storage type.
+
+Example:
+
+```java
+RepositoryFactory.getPatientRepository("MEMORY");
+```
+
+Benefits:
+
+- Easy switching between storage backends
+- Loose coupling
+- Improved maintainability
+- Supports future scalability
+
+---
+
+# Future-Proofing Design
+
+The architecture was designed to support future storage backends such as:
+
+- MySQL
+- PostgreSQL
+- MongoDB
+- JSON/XML file storage
+- External REST APIs
+
+A stub implementation was created:
+
+```java
+DatabasePatientRepository
+```
+
+This demonstrates how the system can later support real database integration without modifying business logic.
+
+---
+
+# CRUD Operations Implemented
+
+The repository layer supports:
+
+| Operation | Description |
+|---|---|
+| Create | Save new entities |
+| Read | Find entities by ID |
+| Read All | Retrieve all entities |
+| Update | Replace existing entities |
+| Delete | Remove entities |
+
+All CRUD operations were tested successfully using the in-memory repositories.
+
+---
+
+# Unit Testing
+
+Manual unit tests were created for:
+
+- InMemoryPatientRepository
+- InMemoryDoctorRepository
+- InMemoryAppointmentRepository
+
+The tests verify:
+
+- Object creation
+- Saving entities
+- Finding entities
+- Listing all entities
+- Deleting entities
+
+These tests ensure the repository layer behaves correctly before integrating more advanced storage systems.
+
+---
+
+# Directory Structure
+
+```text
+repositories/
+│
+├── Repository.java
+├── PatientRepository.java
+├── DoctorRepository.java
+├── AppointmentRepository.java
+│
+├── inmemory/
+│   ├── InMemoryPatientRepository.java
+│   ├── InMemoryDoctorRepository.java
+│   └── InMemoryAppointmentRepository.java
+│
+└── database/
+    └── DatabasePatientRepository.java
+
+factories/
+└── RepositoryFactory.java
+
+tests/
+├── InMemoryPatientRepositoryTest.java
+├── InMemoryDoctorRepositoryTest.java
+└── InMemoryAppointmentRepositoryTest.java
+```
+
+---
+
+# Key Design Decisions
+
+| Decision | Reason |
+|---|---|
+| Generic Repository Interface | Reduce duplication |
+| HashMap Storage | Fast lightweight testing |
+| Factory Pattern | Decouple storage logic |
+| Stub Database Repository | Demonstrate future scalability |
+| Separate Test Directory | Improve maintainability |
+
+---
+
+# Technologies Used
+
+- Java
+- Object-Oriented Programming (OOP)
+- Repository Pattern
+- Factory Pattern
+- HashMap Collections
+- GitHub
+
+---
