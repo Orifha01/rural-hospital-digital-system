@@ -3,7 +3,7 @@ name: Java CI/CD Pipeline
 on:
   push:
     branches:
-      - "*"
+      - "**"
 
   pull_request:
     branches:
@@ -11,28 +11,22 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set Up Java
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Grant execute permission for Maven
-        run: chmod +x mvnw
-
       - name: Run Tests
-        run: ./mvnw test
+        run: mvn test
 
   build:
-
     needs: test
 
     runs-on: ubuntu-latest
@@ -40,21 +34,20 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set Up Java
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Build JAR File
-        run: ./mvnw clean package
+      - name: Build Project
+        run: mvn clean package
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: rural-hospital-digital-system
+          name: rural-hospital-system
           path: target/*.jar
