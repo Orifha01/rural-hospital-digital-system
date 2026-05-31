@@ -426,3 +426,38 @@ tests/
 - GitHub
 
 ---
+
+
+## Getting Started
+
+### Requirements
+
+- Java 17
+- Maven
+- Git
+
+### Installation
+
+```bash
+git clone https://github.com/yourusername/rural-hospital-digital-system.git
+cd rural-hospital-digital-system
+mvn clean install
+```
+
+### Run Application
+
+```bash
+mvn spring-boot:run
+```
+
+## Features for Contribution
+
+| Feature | Difficulty | Status |
+|----------|------------|---------|
+| Patient Search | Easy | Open |
+| SMS Notifications | Medium | Planned |
+| Mobile App Integration | Hard | Planned |
+| Telemedicine | Hard | Planned |
+| Analytics Dashboard | Medium | Planned |
+
+
